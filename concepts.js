@@ -95,4 +95,51 @@ let x = true;
     function callBackOne(name) {
         console.log('good Morning', name)
     }
-    callBackFinall(callBackOne, "Jahid")
+
+    function callBackTwo(name) {
+        console.log('good evening', name)
+    }
+    // callBackFinall(callBackOne, "Jahid")
+    // callBackFinall(callBackTwo, "Jahid")
+
+    function passArgu() {
+        const arg = [...arguments];
+        let sum = 0;
+        for (const data of arg) {
+            sum += data;
+        }
+        return sum;
+    }
+    
+    const arguement = passArgu(1, 2, 3, 5);
+    // console.log(arguement);
+    
+
+// =============================== (Premitive Can't change Inner And Outer)
+
+const num1 = 5;
+const num2 = 7;
+
+function sum(a,b) {
+    a = 3
+    const  sum = a*b;
+        return sum;
+    }
+
+    // console.log(num1)
+    // console.log(sum(num1,num2))
+    // console.log(num1)
+
+    // =============================== ( NON-Premitive Can change Inner And Outer)
+
+    const person = {name:"Person X", Professon : "Developer"};
+    const company = {name: "COM X", ceo : "Alon Musk"}
+    
+    function doSomething(prmOne, prmTwo) {
+        prmOne.name = "Jahid"
+        prmTwo.ceo = "Elon Musk"
+    }
+    // console.log("Outer",person, company);
+    // console.log(doSomething(person, company));
+    // console.log("Outer",person, company);
+    
